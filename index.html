@@ -4,37 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Versys</title>
+    <!-- <link rel="stylesheet" href="css/ui.css"> -->
+    <!-- <link rel="stylesheet" href="css/common.css"> -->
+    <script src="main.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: Helvetica, sans-serif;
+            background-color: #ffffff;
             color: #000;
-            margin: 40px;
+            margin-left: 40px;
+            margin-top: 0;
         }
         h1, h2, p {
             margin-bottom: 20px;
         }
+        h2 {
+            font-size: 1.2em;
+        }
+        p {
+            font-size: em;
+        }
         a {
             color: #000;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
             text-decoration: underline;
         }
-    </style>
-</head>
-<body>
-    <h2>Versys</h2>
-    <p>
-        Wilson Zhao is a music producer and creative technologist based in San Francisco. 
-        Primarily interested in developing "humanity-affirming" technology for live shows, 
-        his work, such as DDSP-VST (<a href="https://magenta.tensorflow.org/ddsp-vst" target="_blank">link</a>), 
-        aims to elevate musical experiences by intertwining tech with human emotion.
-    </p>
-    <p>
-        His artist name, Versys, stands for "versatile system," which reflects his artistic 
-        style and also happens to be the brand of motorcycle he crashed two years ago.
-    </p>
-</body>
-</html>
+        a :hover {
+            color: blue;
+        }
+        /* Add this code to the <style> section */
+            .columns {
+                display: flex;
+                justify-content: space-between;
+                min-height: 100vh;
+                margin-top: 0;
+            }
+
+            .column {
+                flex: 1;
+                flex-direction: column;
+                margin-right: 20px;
+            }
+            .column:last-child {
+                margin-right: 0;
+            }
+            ol {
+            counter-reset: item;
+            list-style-type: none;
+        }
+        .project-details-container {
+            display: flex;
+            justify-content: space-between;
+            background-color: gainsboro;
+        }
+        .project-details-container img,video {
+            width: 100%;
+            height: auto;
+            background-color: gainsboro;
+        }
+        #crop {
+            top: -100px;
+        }
+        
+        li::before {
+            counter-increment: item;
+            content: counters(item, ".") ". ";
+        }
+        
+        li {
+            margin-bottom: 0.5em;
+            margin-top: 0.5em;
+        }
+
+        li ol {
+            margin-left: 0.5em;
+        }
+        </style>
+        </head>
+        
+        <body>
+        <div class="columns">
+            <div class="column project-links">
+        <h2>VERSYS</h2>
+        <p>
+            Wilson Zhao is a music producer and creative technologist based in San Francisco.
+            Primarily interested in developing "humanity-affirming" technology for live shows,
+            his work, such as DDSP-VST (<a href="https://magenta.tensorflow.org/ddsp-vst" target="_blank">link</a>),
+            aims to elevate musical experiences by intertwining tech with human emotion.
+        </p>
+        <p>
+            His artist name, Versys, stands for "versatile system," which reflects his artistic
+            style and also happens to be the brand of motorcycle he crashed two years ago.
+        </p>
+        <h2> WORKS </h2>
+                <ol type="1">
+                    <li> <a href="https://soundcloud.com/versysmusic">Soundcloud</a> (2023-now). <i>WIP.</i>
+                    <li>
+                        Brelly (2023). <i> Modular portable rave lighting system. </i>
+                        <ol>
+                            <li> <a data-project="project-1" href="#" class="project-link"> Leave No Trace </a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li> DDSP VST (2021-2022). <i> Real-time AI timbre transfer. </i>
+                        <ol>
+                            <li>Description: Built the first real-time AI audio <a href="https://en.wikipedia.org/wiki/Virtual_Studio_Technology">VST</a>, which culminated in a
+                                performance in
+                                Google I/O
+                                2022.
+                            </li>
+                            <li>Open-source repo (<a href="https://github.com/magenta/ddsp-vst">link</a>)
+                            </li>
+                            <li>Google I/O performance (2022) (<a href="https://www.youtube.com/watch?v=lUZbHVJMgx4">link</a>)
+                            </li>
+                            <li>Silicon, Robert Laidlow (2022) (<a href="https://www.youtube.com/watch?v=3xmpywK0ACA">link</a>)
+                            </li>
+                            <li>Technical deep dive at <a href="https://audio.dev/archive/adcx/">ADCx</a> (2023) (<a
+                                    href="https://www.youtube.com/watch?v=4-UgqSfraCc">link</a>)
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="column project-details-container">
+                <div class="project-details" id="project-1" style="display: none;">
+                    <video controls="controls" id="crop">
+                        <source src="images/brelly/b.MOV" id="crop">
+                    </video>
+                    <img src="images/brelly/b4.jpeg">
+                    <img src="images/brelly/b3.jpeg">
+                    <img src="images/brelly/b1.jpeg">
+                </div>
+                <div class="project-details" id="project-2" style="display: none;">
+                    <img src="images/ddsp1.png" alt="Project 1 Image 2">
+                </div>
+            </div>
+        </div>
+    </body>
+    
+    </html>
